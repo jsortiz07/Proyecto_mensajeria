@@ -90,7 +90,8 @@
                             <h5 class="card-title"><%=mensaje.getAutor()%></h5>
                             <p class="card-text"><%=mensaje.getMensaje()%></p>
                             <p class="blockquote-footer"><cite><%=mensaje.getFecha()%></cite></p>
-                            <a href="#" class="card-link">Edita</a>
+                            <a href="editar.jsp?id=<%=mensaje.getId()%>&&mensaje=<%=mensaje.getMensaje()%>
+                               &&autor=<%=mensaje.getAutor()%>" class="card-link">Editar</a>
                             <a href="#" class="card-link">Eliminar</a>
                         </div>
                     </div>
