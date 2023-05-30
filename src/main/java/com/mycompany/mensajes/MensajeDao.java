@@ -92,4 +92,35 @@ public class MensajeDao {
         }
         return registros;
     }
+    
+     public int update(Mensaje msn) throws ClassNotFoundException{
+        String sql = "UPDATE mensajes SET mensaje=?, autor=? WHERE id_mensaje=?";
+        int registros = 0;
+        
+                
+        try {
+            this.cn = getConexion();
+            this.ps = this.cn.prepareStatement(sql);
+            
+            this.ps.setString(1, msn.getMensaje());
+            this.ps.setString(2, msn.getAutor());
+            this.ps.setInt(3, msn.getId());
+            
+            registros =  this.ps.executeUpdate();
+            System.out.println("Se edito " + registros + "registro");
+            
+            
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        }finally{ // se cierran las conexiones de PreparedStatement Resultet y Connection
+            try {
+                Conexion.cerrar(this.cn);
+                Conexion.cerrar(this.ps);
+            } catch (SQLException ex) {
+                ex.printStackTrace(System.out);
+            }
+            
+        }
+        return registros;
+    }
 }

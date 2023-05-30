@@ -16,11 +16,16 @@ public class Main {
         //Conexion.getConexion();
         System.out.println("Conexion exitosa");
         MensajeDao mensajeDao = new MensajeDao();
-        Mensaje msm = new Mensaje("Prueba de insercion", "Carolina");
-        System.out.println(msm);
-        int registros = mensajeDao.insertar(msm);
+        //Mensaje msm = new Mensaje("Prueba de insercion", "Carolina");
+        //System.out.println(msm);
+        //int registros = mensajeDao.insertar(msm);
         
         List<Mensaje> mensajes = mensajeDao.seleccionar();
+        
+        Mensaje msm2 = new Mensaje(1, "Hola", "Sebastian");
+        mensajeDao.update(msm2);
+        
+        List<Mensaje> mensajes2 = mensajeDao.seleccionar();
         
         // se recorre el array para mostrar los registros de la DB
         for (Mensaje mensaje : mensajes) {
