@@ -16,6 +16,9 @@ public class Main {
         //Conexion.getConexion();
         System.out.println("Conexion exitosa");
         MensajeDao mensajeDao = new MensajeDao();
+        Mensaje msm = new Mensaje("Prueba de insercion", "Carolina");
+        System.out.println(msm);
+        int registros = mensajeDao.insertar(msm);
         
         List<Mensaje> mensajes = mensajeDao.seleccionar();
         
@@ -23,6 +26,8 @@ public class Main {
         for (Mensaje mensaje : mensajes) {
             System.out.println(mensaje);
         }
+        
+        
     }
    
     
