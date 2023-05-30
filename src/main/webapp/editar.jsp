@@ -28,8 +28,7 @@
                         <div class="form-group">
                             <input type="hidden" name="id" value="<%=request.getParameter("id")%>">
                             <label >Ingrese mensaje </label>
-                            <textarea class="form-control" name="mensaje" rows="3" required="true" >
-                                <%=request.getParameter("mensaje")%>
+                            <textarea class="form-control" name="mensaje" rows="3" required="true" ><%=request.getParameter("mensaje")%>
                             </textarea>
                         </div>
                         <div class="form-group">
