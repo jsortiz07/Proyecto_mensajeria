@@ -20,12 +20,15 @@ public class Main {
         //System.out.println(msm);
         //int registros = mensajeDao.insertar(msm);
         
+        //List<Mensaje> mensajes = mensajeDao.seleccionar();
+        
+        //Mensaje msm2 = new Mensaje(1, "Hola", "Sebastian");
+        //mensajeDao.update(msm2);
+        
+        Mensaje msm3 = new Mensaje(1);
+        mensajeDao.delete(msm3);
+        
         List<Mensaje> mensajes = mensajeDao.seleccionar();
-        
-        Mensaje msm2 = new Mensaje(1, "Hola", "Sebastian");
-        mensajeDao.update(msm2);
-        
-        List<Mensaje> mensajes2 = mensajeDao.seleccionar();
         
         // se recorre el array para mostrar los registros de la DB
         for (Mensaje mensaje : mensajes) {
