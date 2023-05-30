@@ -33,23 +33,37 @@
 
                         <div class="form-group">
                             <label >Ingrese mensaje </label>
-                            <textarea class="form-control" name="mensaje" rows="3"  placeholder="Enter email"></textarea>
+                            <textarea class="form-control" name="mensaje" rows="3" required="true" ></textarea>
                         </div>
                         <div class="form-group">
                             <label>Autor</label>
-                            <input type="text" class="form-control" name="autor" placeholder="Password">
+                            <input type="text" class="form-control" name="autor" required="true">
                         </div>
 
 
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" name="enviar">Enviar</button>
 
                     </div>
                 </form>
             </div>
         </div>
         <%
+            MensajeDao mensajeDaoIns = new MensajeDao();
+            
+            if (request.getParameter("enviar") == null) {
+                    out.print("Hay campos nulos");
+                } else {
+                Mensaje mensajeNuevo = new Mensaje(
+                    request.getParameter("mensaje"), 
+                    request.getParameter("autor"));
+                    
+                    mensajeDaoIns.insertar(mensajeNuevo);
+                
+                }
+                
+                
             
         %>
 
@@ -83,7 +97,7 @@
                 </div>
                 <%}%>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" name="enviarEdit">Enviar</button>
 
                 </div>
             </div>
