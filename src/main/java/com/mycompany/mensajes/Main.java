@@ -25,8 +25,8 @@ public class Main {
         //Mensaje msm2 = new Mensaje(1, "Hola", "Sebastian");
         //mensajeDao.update(msm2);
         
-        Mensaje msm3 = new Mensaje(1);
-        mensajeDao.delete(msm3);
+        //Mensaje msm3 = new Mensaje(1);
+        //mensajeDao.delete(msm3);
         
         List<Mensaje> mensajes = mensajeDao.seleccionar();
         
